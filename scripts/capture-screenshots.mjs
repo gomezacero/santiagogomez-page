@@ -11,6 +11,7 @@ const VIEWPORT = { width: 1600, height: 1000 };
 const LIVE = [
   { slug: 'hilong-lcr', url: 'https://thethreads.io' },
   { slug: 'lenguas-lia', url: 'https://lenguas.co' },
+  { slug: 'contabio', url: 'https://contabio.pro' },
 ];
 
 const GENERATED = [

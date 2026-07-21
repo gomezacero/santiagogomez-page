@@ -30,7 +30,7 @@ export const ui = {
     'featured.index': '01',
     'featured.title': 'Proyectos destacados',
     'featured.subtitle':
-      'Cinco casos de estudio: contexto, decisiones técnicas y resultados medibles.',
+      'Seis casos de estudio: contexto, decisiones técnicas y resultados medibles.',
     'featured.readCase': 'Leer caso de estudio',
     'featured.private': 'Proyecto de cliente · repo privado',
     'featured.visit': 'Ver en producción',
@@ -113,7 +113,7 @@ export const ui = {
     'featured.index': '01',
     'featured.title': 'Featured projects',
     'featured.subtitle':
-      'Five case studies: context, technical decisions and measurable results.',
+      'Six case studies: context, technical decisions and measurable results.',
     'featured.readCase': 'Read case study',
     'featured.private': 'Client project · private repo',
     'featured.visit': 'View live',

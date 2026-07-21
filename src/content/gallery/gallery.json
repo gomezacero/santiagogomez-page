@@ -16,20 +16,6 @@
     "repo": "https://github.com/gomezacero/designflow-ai"
   },
   {
-    "id": "controgastos-es",
-    "lang": "es",
-    "title": "ControGastos",
-    "description": "PWA de finanzas personales 100% offline: datos en IndexedDB, sin backend ni login, instalable en el teléfono.",
-    "stack": ["React 19", "Dexie", "PWA", "Recharts"]
-  },
-  {
-    "id": "controgastos-en",
-    "lang": "en",
-    "title": "ControGastos",
-    "description": "100% offline personal-finance PWA: data in IndexedDB, no backend, no login, installable on your phone.",
-    "stack": ["React 19", "Dexie", "PWA", "Recharts"]
-  },
-  {
     "id": "pollavaleum-es",
     "lang": "es",
     "title": "PollaValeum",
@@ -92,21 +78,5 @@
     "description": "Institutional site for a rural association in Colombia: 400+ active users in the first months.",
     "stack": ["HTML/CSS/JS", "Leaflet", "Cloud hosting"],
     "live": "https://aprotevid.org"
-  },
-  {
-    "id": "blognataliainspo-es",
-    "lang": "es",
-    "title": "Agape by Nat",
-    "description": "Blog editorial de belleza con entradas, tutoriales e infografías — estático y ligero.",
-    "stack": ["HTML/CSS/JS"],
-    "repo": "https://github.com/gomezacero/blogNataliainspo"
-  },
-  {
-    "id": "blognataliainspo-en",
-    "lang": "en",
-    "title": "Agape by Nat",
-    "description": "Editorial beauty blog with posts, tutorials and infographics — static and lightweight.",
-    "stack": ["HTML/CSS/JS"],
-    "repo": "https://github.com/gomezacero/blogNataliainspo"
   }
 ]
