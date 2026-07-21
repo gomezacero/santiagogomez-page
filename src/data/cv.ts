@@ -5,8 +5,8 @@ type L<T = string> = Record<Lang, T>;
 export const contact = {
   name: 'Santiago Gómez Acero',
   headline: {
-    es: 'Desarrollador Full-Stack · Productos con IA',
-    en: 'Full-Stack Developer · AI Products',
+    es: 'Ingeniero de Producto Digital · IA',
+    en: 'Digital Product Engineer · AI',
   } satisfies L,
   location: { es: 'Bucaramanga, Colombia', en: 'Bucaramanga, Colombia' } satisfies L,
   email: 'gomezacero2805@gmail.com',
@@ -17,8 +17,8 @@ export const contact = {
 };
 
 export const summary: L = {
-  es: 'Desarrollador full-stack con proyectos en producción para clientes reales: plataformas de generación de campañas con IA multimodal, sistemas de certificación con CI/CD y coaches conversacionales en tiempo real. Especializado en React/Next.js, Astro, Node.js, PostgreSQL/Supabase y APIs de IA (Claude, Gemini, Vertex AI). Estudiante de Ingeniería de Sistemas (UNAB, grad. 2027).',
-  en: 'Full-stack developer with production projects for real clients: multimodal AI campaign-generation platforms, certification systems with CI/CD and real-time conversational coaches. Specialized in React/Next.js, Astro, Node.js, PostgreSQL/Supabase and AI APIs (Claude, Gemini, Vertex AI). Systems Engineering student (UNAB, grad. 2027).',
+  es: 'Ingeniero de producto digital con proyectos en producción para clientes reales: plataformas de generación de campañas con IA multimodal, sistemas de certificación con CI/CD y coaches conversacionales en tiempo real. Especializado en React/Next.js, Astro, Node.js, PostgreSQL/Supabase y APIs de IA (Claude, Gemini, Vertex AI). Estudiante de Ingeniería de Sistemas (UNAB, grad. 2027).',
+  en: 'Digital product engineer with production projects for real clients: multimodal AI campaign-generation platforms, certification systems with CI/CD and real-time conversational coaches. Specialized in React/Next.js, Astro, Node.js, PostgreSQL/Supabase and AI APIs (Claude, Gemini, Vertex AI). Systems Engineering student (UNAB, grad. 2027).',
 };
 
 export interface CvItem {

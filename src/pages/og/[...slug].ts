@@ -6,14 +6,14 @@ const projects = await getCollection('projects');
 const pages: Record<string, { title: string; description: string }> = {
   'es/home': {
     title: 'Santiago Gómez Acero',
-    description: 'Desarrollo productos web con IA que llegan a producción.',
+    description: 'Convierto ideas en realidades digitales.',
   },
   'en/home': {
     title: 'Santiago Gómez Acero',
-    description: 'I build AI-powered web products that ship.',
+    description: 'I turn ideas into digital realities.',
   },
-  'es/cv': { title: 'CV — Santiago Gómez Acero', description: 'Desarrollador Full-Stack · Productos con IA' },
-  'en/cv': { title: 'Resume — Santiago Gómez Acero', description: 'Full-Stack Developer · AI Products' },
+  'es/cv': { title: 'CV — Santiago Gómez Acero', description: 'Ingeniero de Producto Digital · IA' },
+  'en/cv': { title: 'Resume — Santiago Gómez Acero', description: 'Digital Product Engineer · AI' },
 };
 
 for (const project of projects) {

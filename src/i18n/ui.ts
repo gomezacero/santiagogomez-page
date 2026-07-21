@@ -9,9 +9,9 @@ export const defaultLang: Lang = 'es';
 
 export const ui = {
   es: {
-    'meta.title': 'Santiago Gómez Acero — Desarrollador Full-Stack · Productos con IA',
+    'meta.title': 'Santiago Gómez Acero — Ingeniero de Producto Digital · IA',
     'meta.description':
-      'Desarrollo productos web con IA que llegan a producción: plataformas de ads, coaches conversacionales, CMS editoriales y más. Bucaramanga, Colombia.',
+      'Convierto ideas en realidades digitales: plataformas con IA, productos SaaS y soluciones a la medida para negocios que quieren crecer. Bucaramanga, Colombia.',
 
     'nav.projects': 'Proyectos',
     'nav.skills': 'Skills',
@@ -20,9 +20,9 @@ export const ui = {
     'nav.contact': 'Contacto',
     'nav.cv': 'CV',
 
-    'hero.kicker': 'Santiago Gómez Acero — Ingeniero de sistemas en formación · Full-stack en producción',
-    'hero.title.1': 'Desarrollo productos web con IA',
-    'hero.title.2': 'que llegan a producción.',
+    'hero.kicker': 'Santiago Gómez Acero — Ingeniero de producto digital · IA',
+    'hero.title.1': 'Convierto ideas en',
+    'hero.title.2': 'realidades digitales.',
     'hero.meta': 'Bucaramanga, CO · GMT-5 · disponible',
     'hero.cta.projects': 'Ver proyectos',
     'hero.cta.cv': 'Descargar CV',
@@ -92,9 +92,9 @@ export const ui = {
     'lang.switch': 'Switch to English',
   },
   en: {
-    'meta.title': 'Santiago Gómez Acero — Full-Stack Developer · AI Products',
+    'meta.title': 'Santiago Gómez Acero — Digital Product Engineer · AI',
     'meta.description':
-      'I build AI-powered web products that ship: ad platforms, real-time conversational coaches, editorial CMSs and more. Bucaramanga, Colombia.',
+      'I turn ideas into digital realities: AI platforms, SaaS products and tailor-made solutions for businesses that want to grow. Bucaramanga, Colombia.',
 
     'nav.projects': 'Projects',
     'nav.skills': 'Skills',
@@ -103,9 +103,9 @@ export const ui = {
     'nav.contact': 'Contact',
     'nav.cv': 'Resume',
 
-    'hero.kicker': 'Santiago Gómez Acero — Systems engineering student · Full-stack in production',
-    'hero.title.1': 'I build AI-powered web products',
-    'hero.title.2': 'that ship.',
+    'hero.kicker': 'Santiago Gómez Acero — Digital product engineer · AI',
+    'hero.title.1': 'I turn ideas into',
+    'hero.title.2': 'digital realities.',
     'hero.meta': 'Bucaramanga, CO · GMT-5 · available',
     'hero.cta.projects': 'View projects',
     'hero.cta.cv': 'Download resume',
