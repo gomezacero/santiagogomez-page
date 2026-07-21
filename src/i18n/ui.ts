@@ -47,17 +47,34 @@ export const ui = {
     'skills.soft.body':
       'Orador premiado (ULIBRO 2019) y desarrollador reconocido en IngenioTIC 2022. Lidero proyectos de punta a punta: levanto requisitos con stakeholders no técnicos, comunico decisiones con claridad y entrego bajo presión. Inglés B2.2 — trabajo cómodo en equipos internacionales.',
 
-    'path.index': '04',
+    'ai.index': '04',
+    'ai.title': 'IA en mi flujo de trabajo',
+    'ai.subtitle':
+      'No solo construyo productos con IA — construyo con IA. Agentes de código, ecosistema multi-modelo y modelos open source son parte de mi caja de herramientas diaria.',
+    'ai.c1.title': 'Agentes de código',
+    'ai.c1.body':
+      'Claude Code y Codex como pares de programación: dirijo agentes que escriben, prueban y refactorizan bajo mi criterio. Multiplican la velocidad de entrega sin sacrificar calidad — cada línea pasa por mi revisión.',
+    'ai.c2.title': 'Ecosistema multi-modelo',
+    'ai.c2.body':
+      'Claude, GPT, Gemini: cada tarea tiene su modelo ideal según razonamiento, multimodalidad, ventana de contexto y costo. Saber elegir es parte del oficio.',
+    'ai.c3.title': 'Open source y local',
+    'ai.c3.body':
+      'Llama, Whisper y modelos locales vía Ollama cuando el caso pide soberanía de datos o costo cero por token. La IA no siempre vive en una API de pago.',
+    'ai.c4.title': 'De herramienta a producto',
+    'ai.c4.body':
+      'Lo que aprendo usando estas herramientas se convierte en features: pipelines de generación, agentes, RAG y automatizaciones que ya viven en los proyectos de arriba.',
+
+    'path.index': '05',
     'path.title': 'Trayectoria',
 
-    'about.index': '05',
+    'about.index': '06',
     'about.title': 'Sobre mí',
     'about.p1':
       'Soy Santiago, desarrollador full-stack de Bucaramanga, Colombia. En los últimos años pasé de construir sitios institucionales a diseñar y desplegar plataformas completas con IA: pipelines de generación de contenido multimodal, coaches conversacionales en tiempo real y sistemas de certificación en producción con CI/CD.',
     'about.p2':
       'Termino Ingeniería de Sistemas en la UNAB en 2027 mientras construyo para clientes reales. Me obsesiona que las cosas lleguen a producción: con tests, con métricas y con usuarios de verdad. Si algo de lo que viste te sirve para tu equipo o tu proyecto, hablemos.',
 
-    'contact.index': '06',
+    'contact.index': '07',
     'contact.title': 'Contacto',
     'contact.recruiter.title': '¿Reclutas?',
     'contact.recruiter.body': 'CV en PDF (ES/EN) y perfil completo en LinkedIn.',
@@ -130,17 +147,34 @@ export const ui = {
     'skills.soft.body':
       'Award-winning public speaker (ULIBRO 2019) and recognized developer at IngenioTIC 2022. I lead projects end to end: gathering requirements with non-technical stakeholders, communicating decisions clearly and delivering under pressure. English B2.2 — comfortable in international teams.',
 
-    'path.index': '04',
+    'ai.index': '04',
+    'ai.title': 'AI in my workflow',
+    'ai.subtitle':
+      "I don't just build AI products — I build with AI. Coding agents, a multi-model ecosystem and open-source models are part of my everyday toolbox.",
+    'ai.c1.title': 'Coding agents',
+    'ai.c1.body':
+      'Claude Code and Codex as pair programmers: I direct agents that write, test and refactor under my judgement. They multiply delivery speed without sacrificing quality — every line goes through my review.',
+    'ai.c2.title': 'Multi-model ecosystem',
+    'ai.c2.body':
+      'Claude, GPT, Gemini: every task has its ideal model depending on reasoning, multimodality, context window and cost. Knowing how to choose is part of the craft.',
+    'ai.c3.title': 'Open source & local',
+    'ai.c3.body':
+      'Llama, Whisper and local models via Ollama when the case demands data sovereignty or zero cost per token. AI does not always live behind a paid API.',
+    'ai.c4.title': 'From tool to product',
+    'ai.c4.body':
+      'What I learn using these tools becomes features: generation pipelines, agents, RAG and automations that already live in the projects above.',
+
+    'path.index': '05',
     'path.title': 'Journey',
 
-    'about.index': '05',
+    'about.index': '06',
     'about.title': 'About me',
     'about.p1':
       "I'm Santiago, a full-stack developer from Bucaramanga, Colombia. Over the last few years I went from building institutional websites to designing and shipping full platforms with AI: multimodal content-generation pipelines, real-time conversational coaches and certification systems running in production with CI/CD.",
     'about.p2':
       "I finish my Systems Engineering degree at UNAB in 2027 while building for real clients. I'm obsessed with getting things to production: with tests, with metrics and with real users. If anything you saw here could help your team or your project, let's talk.",
 
-    'contact.index': '06',
+    'contact.index': '07',
     'contact.title': 'Contact',
     'contact.recruiter.title': 'Hiring?',
     'contact.recruiter.body': 'Resume as PDF (ES/EN) and full profile on LinkedIn.',

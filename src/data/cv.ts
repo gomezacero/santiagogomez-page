@@ -120,14 +120,14 @@ export const cvSkills: L<Record<string, string>> = {
     Backend: 'Node.js, Express, Hono, Laravel (PHP), Prisma, REST',
     'Bases de datos': 'PostgreSQL, Supabase (RLS), MySQL, triggers SQL',
     'Cloud & DevOps': 'Docker, Cloud Run, Vercel, GitHub Actions, AWS, Git',
-    IA: 'Claude API, Gemini Live, Vertex AI (Imagen/Veo), OpenAI, RAG',
+    IA: 'Claude API, Gemini Live, Vertex AI (Imagen/Veo), OpenAI, RAG · Herramientas: Claude Code, Codex, Ollama',
   },
   en: {
     Frontend: 'React 19, Next.js, Astro 5, TypeScript, Tailwind CSS',
     Backend: 'Node.js, Express, Hono, Laravel (PHP), Prisma, REST',
     Databases: 'PostgreSQL, Supabase (RLS), MySQL, SQL triggers',
     'Cloud & DevOps': 'Docker, Cloud Run, Vercel, GitHub Actions, AWS, Git',
-    AI: 'Claude API, Gemini Live, Vertex AI (Imagen/Veo), OpenAI, RAG',
+    AI: 'Claude API, Gemini Live, Vertex AI (Imagen/Veo), OpenAI, RAG · Tooling: Claude Code, Codex, Ollama',
   },
 };
 
