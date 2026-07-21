@@ -1,0 +1,21 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import { contact } from '@/data/cv';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-line">
+  <div
+    class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-5 font-mono text-xs text-muted"
+  >
+    <p class="flex items-center gap-2">
+      <span class="text-accent-2">main ✓</span>
+      <span aria-hidden="true">·</span>
+      <span>{t('footer.built')}</span>
+    </p>
+    <p>{t('footer.coords')} · © {year} {contact.name}</p>
+  </div>
+</footer>

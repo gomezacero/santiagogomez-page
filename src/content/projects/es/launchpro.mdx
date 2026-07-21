@@ -1,0 +1,46 @@
+---
+title: 'LaunchPro'
+tagline: 'Plataforma que lanza campañas de publicidad digital en Tonic, Meta y TikTok con contenido generado por IA — de horas a minutos.'
+order: 1
+year: '2025 — 2026'
+role: 'Desarrollador full-stack · IA'
+kind: 'cliente-privado'
+stack:
+  - 'Next.js 14'
+  - 'React 19'
+  - 'TypeScript'
+  - 'PostgreSQL + Prisma'
+  - 'Claude API'
+  - 'Vertex AI (Imagen 4 · Veo 3.1)'
+  - 'Docker'
+  - 'Google Cloud Run'
+highlights:
+  - { metric: '3', label: 'plataformas de ads integradas' }
+  - { metric: 'h → min', label: 'tiempo de lanzamiento' }
+  - { metric: '4', label: 'modelos de IA orquestados' }
+private: true
+cover: '../../../assets/projects/launchpro/cover.png'
+---
+
+## Contexto
+
+Un equipo de media buying lanzaba campañas de publicidad digital de forma manual: redactar el copy, producir imágenes y video, configurar la campaña en cada plataforma y publicarla. Cada lanzamiento tomaba horas y el proceso no escalaba.
+
+## Problema
+
+Tres plataformas distintas (Tonic, Meta Ads y TikTok Ads), cada una con su API, sus formatos creativos y sus reglas de validación. Y un cuello de botella creativo: producir copy, keywords, artículos, imágenes y video para cada campaña.
+
+## Solución
+
+Construí una aplicación web que orquesta el flujo completo: desde el brief hasta la campaña publicada.
+
+- **Generación de contenido con IA multimodal**: Claude genera copy, keywords y artículos; Vertex AI Imagen 4 produce las imágenes y Veo 3.1 el video creativo.
+- **Integración directa** con las APIs de Tonic, Meta y TikTok para crear y publicar campañas sin salir de la app.
+- **Workers dedicados** para las tareas pesadas (generación programática y video), desacoplados del flujo principal.
+- **Infraestructura reproducible**: PostgreSQL con Prisma, contenedores Docker y despliegue en Google Cloud Run.
+
+## Resultados
+
+El flujo de lanzamiento pasó de horas de trabajo manual a minutos con supervisión humana. El equipo puede lanzar más campañas, con más variantes creativas, sin crecer en personal.
+
+> Proyecto desarrollado para un cliente bajo acuerdo de confidencialidad: el código y los datos de campañas no son públicos.

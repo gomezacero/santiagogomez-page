@@ -1,0 +1,44 @@
+---
+title: 'Hilong LCR'
+tagline: 'Plataforma de certificación multi-rol, bilingüe y en producción — con tests, e2e y despliegue continuo.'
+order: 2
+year: '2025'
+role: 'Desarrollador full-stack'
+kind: 'produccion'
+stack:
+  - 'React 19'
+  - 'Vite'
+  - 'Tailwind CSS 4'
+  - 'Express'
+  - 'PostgreSQL'
+  - 'JWT'
+  - 'GitHub Actions'
+  - 'Docker + Cloud Run'
+links:
+  live: 'https://thethreads.io'
+  repo: 'https://github.com/gomezacero/hilong-lcr'
+highlights:
+  - { metric: '3', label: 'roles de usuario' }
+  - { metric: 'ES/EN', label: 'bilingüe' }
+  - { metric: 'CI/CD', label: 'deploy automático en main' }
+cover: '../../../assets/projects/hilong-lcr/cover.png'
+---
+
+## Contexto
+
+Una operación de certificación necesitaba coordinar a tres actores distintos — administradores, clientes y talleres — sobre un mismo flujo de trabajo, en dos idiomas.
+
+## Problema
+
+Cada rol ve y hace cosas diferentes: el administrador gestiona todo el sistema, el cliente sigue sus certificaciones y el taller ejecuta el trabajo técnico. Un único frontend tenía que servir a los tres sin fugas de información entre roles.
+
+## Solución
+
+- **SPA en React 19 + Vite** con vistas y permisos por rol, servida sobre un **backend Express + PostgreSQL** con autenticación JWT, `helmet` y rate limiting.
+- **Bilingüe ES/EN** de extremo a extremo.
+- **Mapas y documentos**: integración con OpenLayers/Google Maps y generación de PDF con jsPDF.
+- **Calidad como proceso**: tests unitarios con Vitest, pruebas e2e y GitHub Actions que construye, prueba y despliega a Cloud Run en cada push a `main`.
+
+## Resultados
+
+La plataforma está **en producción** en [thethreads.io](https://thethreads.io). El pipeline de CI/CD permite iterar con confianza: cada cambio llega a producción validado por la suite de tests.

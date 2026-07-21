@@ -1,0 +1,196 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '@/layouts/Base.astro';
+import { getLangFromUrl, useTranslations, localizePath } from '@/i18n/utils';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  next?: { title: string; href: string } | null;
+}
+
+const { project, next } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const backHref = `${localizePath(lang, '/')}#proyectos`;
+---
+
+<Base
+  title={`${project.data.title} — Santiago Gómez Acero`}
+  description={project.data.tagline}
+>
+  <main class="mx-auto max-w-4xl px-5 py-14 md:py-20">
+    <a href={backHref} class="link-editorial font-mono text-sm text-muted">
+      ← {t('case.back')}
+    </a>
+
+    <header class="mt-8">
+      <p class="section-index">{String(project.data.order).padStart(2, '0')} /</p>
+      <h1 class="mt-2 font-display text-4xl font-semibold tracking-tight text-ink md:text-6xl">
+        {project.data.title}
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg text-muted">{project.data.tagline}</p>
+
+      <dl class="mt-8 grid grid-cols-2 gap-6 border-y border-line py-6 font-mono text-sm md:grid-cols-4">
+        <div>
+          <dt class="text-xs uppercase tracking-widest text-muted">{t('case.year')}</dt>
+          <dd class="mt-1 text-ink">{project.data.year}</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-widest text-muted">{t('case.role')}</dt>
+          <dd class="mt-1 text-ink">{project.data.role}</dd>
+        </div>
+        {
+          project.data.highlights.slice(0, 2).map((h) => (
+            <div>
+              <dt class="text-xs uppercase tracking-widest text-muted">{h.label}</dt>
+              <dd class="mt-1 text-accent-2">{h.metric}</dd>
+            </div>
+          ))
+        }
+      </dl>
+
+      {
+        project.data.private && (
+          <p class="mt-5 inline-block rounded border border-line bg-surface px-3 py-1.5 font-mono text-xs text-muted">
+            🔒 {t('featured.private')}
+          </p>
+        )
+      }
+    </header>
+
+    <div class="browser-frame mt-10">
+      <div class="chrome">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="ml-2 truncate">
+          {project.data.links.live?.replace('https://', '') ?? project.data.title.toLowerCase()}
+        </span>
+      </div>
+      <Image
+        src={project.data.cover}
+        alt={`${project.data.title} — interfaz`}
+        widths={[640, 1024, 1600]}
+        sizes="(min-width: 896px) 896px, 100vw"
+        loading="eager"
+        class="w-full object-cover"
+      />
+    </div>
+
+    <article class="case-prose mt-12">
+      <slot />
+    </article>
+
+    <section class="mt-12 border-t border-line pt-8">
+      <h2 class="font-mono text-xs uppercase tracking-[0.18em] text-accent">{t('case.stack')}</h2>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {
+          project.data.stack.map((tech) => (
+            <li class="rounded border border-line px-2.5 py-1 font-mono text-xs text-muted">{tech}</li>
+          ))
+        }
+      </ul>
+      <div class="mt-6 flex flex-wrap gap-5">
+        {
+          project.data.links.live && (
+            <a
+              href={project.data.links.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-editorial font-medium text-ink"
+            >
+              {t('featured.visit')} ↗
+            </a>
+          )
+        }
+        {
+          !project.data.private && project.data.links.repo && (
+            <a
+              href={project.data.links.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-editorial font-medium text-ink"
+            >
+              {t('featured.repo')} ↗
+            </a>
+          )
+        }
+      </div>
+    </section>
+
+    {
+      next && (
+        <nav class="mt-14 border-t border-line pt-8 text-right">
+          <p class="font-mono text-xs uppercase tracking-widest text-muted">{t('case.next')}</p>
+          <a href={next.href} class="link-editorial mt-1 inline-block font-display text-2xl text-ink">
+            {next.title} →
+          </a>
+        </nav>
+      )
+    }
+  </main>
+</Base>
+
+<style is:global>
+  .case-prose h2 {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--c-text);
+    margin: 2.4rem 0 0.9rem;
+    letter-spacing: -0.01em;
+  }
+  .case-prose p {
+    color: var(--c-muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .case-prose ul {
+    margin: 1rem 0 1rem 1.1rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .case-prose ul li {
+    color: var(--c-muted);
+    line-height: 1.65;
+    position: relative;
+    padding-left: 1.2rem;
+  }
+  .case-prose ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--c-accent);
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+  }
+  .case-prose strong {
+    color: var(--c-text);
+    font-weight: 600;
+  }
+  .case-prose a {
+    color: var(--c-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+  .case-prose blockquote {
+    border-left: 3px solid var(--c-accent);
+    background: var(--c-surface);
+    padding: 0.9rem 1.2rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    margin: 1.6rem 0;
+  }
+  .case-prose blockquote p {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+  .case-prose code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: 0.3rem;
+    padding: 0.1rem 0.35rem;
+  }
+</style>

@@ -1,0 +1,16 @@
+---
+import { getLangFromUrl, useTranslations, alternatePath } from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const alt = alternatePath(Astro.url);
+---
+
+<a
+  href={alt.path}
+  aria-label={t('lang.switch')}
+  title={t('lang.switch')}
+  class="grid h-9 min-w-9 place-items-center rounded-md border border-line px-2 font-mono text-xs uppercase tracking-widest text-muted transition-colors hover:border-accent hover:text-accent"
+>
+  {alt.lang}
+</a>

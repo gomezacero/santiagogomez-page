@@ -1,0 +1,44 @@
+---
+title: 'Hilong LCR'
+tagline: 'A multi-role, bilingual certification platform in production — with tests, e2e and continuous deployment.'
+order: 2
+year: '2025'
+role: 'Full-stack developer'
+kind: 'produccion'
+stack:
+  - 'React 19'
+  - 'Vite'
+  - 'Tailwind CSS 4'
+  - 'Express'
+  - 'PostgreSQL'
+  - 'JWT'
+  - 'GitHub Actions'
+  - 'Docker + Cloud Run'
+links:
+  live: 'https://thethreads.io'
+  repo: 'https://github.com/gomezacero/hilong-lcr'
+highlights:
+  - { metric: '3', label: 'user roles' }
+  - { metric: 'ES/EN', label: 'bilingual' }
+  - { metric: 'CI/CD', label: 'auto-deploy on main' }
+cover: '../../../assets/projects/hilong-lcr/cover.png'
+---
+
+## Context
+
+A certification operation needed to coordinate three different actors — administrators, clients and workshops — over the same workflow, in two languages.
+
+## Problem
+
+Each role sees and does different things: the administrator manages the whole system, the client tracks their certifications and the workshop executes the technical work. A single frontend had to serve all three without information leaking across roles.
+
+## Solution
+
+- **React 19 + Vite SPA** with per-role views and permissions, on top of an **Express + PostgreSQL backend** with JWT authentication, `helmet` and rate limiting.
+- **Bilingual ES/EN** end to end.
+- **Maps and documents**: OpenLayers/Google Maps integration and PDF generation with jsPDF.
+- **Quality as a process**: unit tests with Vitest, e2e tests and GitHub Actions building, testing and deploying to Cloud Run on every push to `main`.
+
+## Results
+
+The platform is **live in production** at [thethreads.io](https://thethreads.io). The CI/CD pipeline makes iteration safe: every change reaches production validated by the test suite.

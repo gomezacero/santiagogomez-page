@@ -1,0 +1,91 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import { contact } from '@/data/cv';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const whatsappUrl = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(t('contact.whatsappMsg'))}`;
+---
+
+<section id="contacto" class="border-t border-line bg-surface/40">
+  <div class="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 md:py-28">
+    <p class="section-index">{t('contact.index')} /</p>
+    <h2 class="mt-2 font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">
+      {t('contact.title')}
+    </h2>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      <!-- Reclutadores -->
+      <div class="reveal rounded-lg border border-line bg-surface p-7 md:p-9">
+        <h3 class="font-display text-2xl font-medium text-ink">{t('contact.recruiter.title')}</h3>
+        <p class="mt-2 text-muted">{t('contact.recruiter.body')}</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a
+            href={`/cv/santiago-gomez-cv-${lang}.pdf`}
+            download
+            class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
+          >
+            {t('contact.recruiter.cv')}
+          </a>
+          <a
+            href={contact.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-md border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+          >
+            {t('contact.recruiter.linkedin')} ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Freelance -->
+      <div class="reveal rounded-lg border border-line bg-surface p-7 md:p-9">
+        <h3 class="font-display text-2xl font-medium text-ink">{t('contact.freelance.title')}</h3>
+        <p class="mt-2 text-muted">{t('contact.freelance.body')}</p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-md bg-accent-2 px-5 py-2.5 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
+          >
+            {t('contact.freelance.whatsapp')}
+          </a>
+          <button
+            id="copy-email"
+            type="button"
+            data-email={contact.email}
+            data-copied={t('contact.freelance.emailCopied')}
+            class="rounded-md border border-line px-5 py-2.5 font-mono text-sm text-ink transition-colors hover:border-accent hover:text-accent"
+          >
+            {t('contact.freelance.email')}
+          </button>
+        </div>
+        <p class="mt-4 font-mono text-xs text-muted">
+          <a href={`mailto:${contact.email}`} class="link-editorial">{contact.email}</a>
+          <span aria-hidden="true"> · </span>
+          <a href={contact.github} target="_blank" rel="noopener noreferrer" class="link-editorial"
+            >github.com/gomezacero</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const btn = document.getElementById('copy-email');
+  btn?.addEventListener('click', async () => {
+    const email = btn.dataset.email ?? '';
+    const copied = btn.dataset.copied ?? '✓';
+    const original = btn.textContent;
+    try {
+      await navigator.clipboard.writeText(email);
+      btn.textContent = copied;
+      setTimeout(() => (btn.textContent = original), 1600);
+    } catch {
+      location.href = `mailto:${email}`;
+    }
+  });
+</script>

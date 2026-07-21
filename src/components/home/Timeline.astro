@@ -1,0 +1,35 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import { milestones } from '@/data/experience';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="trayectoria" class="border-y border-line bg-surface/40">
+  <div class="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 md:py-24">
+    <p class="section-index">{t('path.index')} /</p>
+    <h2 class="mt-2 font-display text-4xl font-semibold tracking-tight text-ink">
+      {t('path.title')}
+    </h2>
+
+    <ol class="relative mt-12 space-y-10 border-s border-line ps-8">
+      {
+        milestones.map((m) => (
+          <li class="reveal relative">
+            <span
+              class:list={[
+                'absolute -start-[2.45rem] top-1 size-3 rounded-full border-2',
+                m.highlight ? 'border-accent bg-accent' : 'border-line bg-surface',
+              ]}
+              aria-hidden="true"
+            />
+            <p class="font-mono text-xs uppercase tracking-widest text-accent">{m.period}</p>
+            <h3 class="mt-1 font-display text-xl font-medium text-ink">{m.title[lang]}</h3>
+            <p class="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">{m.body[lang]}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

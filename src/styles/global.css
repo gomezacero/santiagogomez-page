@@ -1,0 +1,210 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/ClashDisplay-Variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@theme {
+  --font-display: 'Clash Display', 'Inter Variable', system-ui, sans-serif;
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', monospace;
+
+  --color-bg: var(--c-bg);
+  --color-surface: var(--c-surface);
+  --color-ink: var(--c-text);
+  --color-muted: var(--c-muted);
+  --color-accent: var(--c-accent);
+  --color-accent-2: var(--c-accent-2);
+  --color-line: var(--c-line);
+}
+
+/* ---------- Tokens de tema ---------- */
+:root {
+  --c-bg: #0c0e11;
+  --c-surface: #14171c;
+  --c-text: #e9eaec;
+  --c-muted: #9aa0a8;
+  --c-accent: #e0784a;
+  --c-accent-2: #8fbf6f;
+  --c-line: #262a31;
+  --shadow-card: 0 24px 60px -24px rgb(0 0 0 / 0.55);
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --c-bg: #f7f4ee;
+  --c-surface: #ffffff;
+  --c-text: #1b1e23;
+  --c-muted: #5b6068;
+  --c-accent: #c25e33;
+  --c-accent-2: #5e8c46;
+  --c-line: #e2dcd2;
+  --shadow-card: 0 24px 50px -28px rgb(27 30 35 / 0.28);
+  color-scheme: light;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background: var(--c-accent);
+  color: var(--c-bg);
+}
+
+/* Retícula técnica de fondo (hero y secciones) */
+.blueprint-grid {
+  background-image:
+    linear-gradient(var(--c-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--c-line) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 90% 75% at 50% 30%, black 25%, transparent 78%);
+}
+
+/* Índices mono estilo blueprint: 01/, 02/ … */
+.section-index {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  color: var(--c-accent);
+  text-transform: uppercase;
+}
+
+/* Cursor parpadeante del hero */
+.blink-cursor::after {
+  content: '▍';
+  color: var(--c-accent);
+  animation: blink 1.1s steps(2, start) infinite;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* ---------- Animaciones de entrada por scroll ---------- */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 42%;
+    }
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(2.2rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Marco de navegador para capturas */
+.browser-frame {
+  border: 1px solid var(--c-line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--c-surface);
+  box-shadow: var(--shadow-card);
+}
+.browser-frame > .chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  border-bottom: 1px solid var(--c-line);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--c-muted);
+}
+.browser-frame > .chrome .dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 9999px;
+  background: var(--c-line);
+}
+
+/* Hover 3D sutil en tarjetas de proyecto */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .tilt-wrap {
+    perspective: 1200px;
+  }
+  .tilt-wrap .tilt {
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .tilt-wrap:hover .tilt {
+    transform: rotateX(1.6deg) rotateY(-2deg) translateY(-4px);
+  }
+}
+
+/* Enlace subrayado estilo editorial */
+.link-editorial {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--c-accent) 55%, transparent);
+  text-underline-offset: 0.28em;
+  transition: text-decoration-color 0.2s ease, color 0.2s ease;
+}
+.link-editorial:hover {
+  color: var(--c-accent);
+  text-decoration-color: var(--c-accent);
+}
+
+/* ---------- Impresión (página CV) ---------- */
+@page {
+  size: A4;
+  margin: 1.4cm 1.5cm;
+}
+
+@media print {
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    background: #ffffff !important;
+    color: #1b1e23 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

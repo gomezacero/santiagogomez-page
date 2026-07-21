@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Si existe src/assets/retrato.{jpg,png,webp} se usa; si no, monograma tipográfico.
+const portraits = import.meta.glob<{ default: ImageMetadata }>(
+  '../../assets/retrato.{jpg,jpeg,png,webp}',
+);
+const portraitEntry = Object.values(portraits)[0];
+const portrait = portraitEntry ? (await portraitEntry()).default : null;
+---
+
+<section id="sobre-mi" class="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 md:py-28">
+  <p class="section-index">{t('about.index')} /</p>
+  <h2 class="mt-2 font-display text-4xl font-semibold tracking-tight text-ink">
+    {t('about.title')}
+  </h2>
+
+  <div class="mt-10 grid items-start gap-10 md:grid-cols-[280px_1fr]">
+    <div class="reveal">
+      {
+        portrait ? (
+          <Image
+            src={portrait}
+            alt="Santiago Gómez Acero"
+            widths={[280, 560]}
+            sizes="280px"
+            class="portrait-duotone aspect-square w-full max-w-[280px] rounded-lg border border-line object-cover"
+          />
+        ) : (
+          <div
+            class="grid aspect-square w-full max-w-[280px] place-items-center rounded-lg border border-line bg-surface"
+            aria-hidden="true"
+          >
+            <span class="font-display text-7xl font-semibold text-accent">SG</span>
+          </div>
+        )
+      }
+      <p class="mt-3 font-mono text-xs text-muted">Santiago Gómez Acero · Bucaramanga, CO</p>
+    </div>
+    <div class="reveal space-y-5 leading-relaxed text-muted md:text-lg">
+      <p>{t('about.p1')}</p>
+      <p>{t('about.p2')}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .portrait-duotone {
+    filter: grayscale(1) contrast(1.05);
+    transition: filter 0.4s ease;
+  }
+  .portrait-duotone:hover {
+    filter: none;
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+title: 'QuickTipss CMS'
+tagline: 'A multi-country, API-first editorial CMS aimed at perfect Core Web Vitals.'
+order: 4
+year: '2025 — 2026'
+role: 'Architecture & development'
+kind: 'personal'
+stack:
+  - 'Astro 5'
+  - 'pnpm monorepo'
+  - 'Hono + OpenAPI 3.1'
+  - 'Supabase Postgres 16'
+  - 'pgvector · pgmq · pg_cron'
+  - 'Vercel Edge'
+  - 'Lighthouse CI'
+links:
+  repo: 'https://github.com/gomezacero/cms-quicktipss'
+highlights:
+  - { metric: '100/100', label: 'Core Web Vitals target' }
+  - { metric: 'OpenAPI 3.1', label: 'API-first' }
+  - { metric: '4 apps', label: 'monorepo: web · admin · api · workers' }
+cover: '../../../assets/projects/cms-quicktipss/cover.png'
+---
+
+## Context
+
+QuickTipss is a multi-country editorial ecosystem. Instead of bending a generic CMS, I designed a purpose-built one where the architecture serves three goals: perfect performance, AI-agent-automated publishing and data sovereignty.
+
+## Problem
+
+Traditional CMSs couple content, presentation and publishing. Publishing across countries, with agent automation and 100/100 Core Web Vitals, requires separating each piece and connecting them through clear contracts.
+
+## Solution
+
+- **pnpm monorepo** with four applications (web, admin, api, workers) and shared packages.
+- **Astro 5 with SSG + Server Islands**: static HTML for maximum speed, server islands for what's dynamic.
+- **Truly API-first**: Hono with `@hono/zod-openapi` on Vercel Edge Functions — the OpenAPI 3.1 schema is the contract, validated with Zod at every edge.
+- **Advanced Postgres on Supabase**: queues with `pgmq`, scheduled jobs with `pg_cron` and semantic search with `pgvector`.
+- **Lighthouse CI on GitHub Actions**: performance is just another test — if it drops, the build fails.
+
+## Results
+
+An editorial foundation where publishing an article, distributing it to social networks and measuring it is an end-to-end automatable flow, with performance guaranteed by architecture rather than patched in later.

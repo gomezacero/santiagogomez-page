@@ -1,0 +1,33 @@
+---
+import Base from '@/layouts/Base.astro';
+import CvSheet from '@/components/CvSheet.astro';
+import { useTranslations } from '@/i18n/utils';
+
+const t = useTranslations('es');
+---
+
+<Base title="CV — Santiago Gómez Acero" bare>
+  <div class="no-print sticky top-0 z-10 border-b border-line bg-bg/90 backdrop-blur">
+    <div class="mx-auto flex max-w-4xl items-center justify-between px-5 py-3">
+      <a href="/" class="link-editorial font-mono text-sm text-muted">← santiagogomez</a>
+      <div class="flex gap-3">
+        <a
+          href="/cv/santiago-gomez-cv-es.pdf"
+          download
+          class="rounded-md bg-accent px-4 py-2 text-sm font-medium text-bg"
+        >
+          {t('cv.download')}
+        </a>
+        <button
+          onclick="print()"
+          class="rounded-md border border-line px-4 py-2 text-sm text-ink hover:border-accent"
+        >
+          {t('cv.print')}
+        </button>
+      </div>
+    </div>
+  </div>
+  <main class="bg-[#e8e4dc] py-8 print:bg-white print:py-0">
+    <CvSheet lang="es" />
+  </main>
+</Base>

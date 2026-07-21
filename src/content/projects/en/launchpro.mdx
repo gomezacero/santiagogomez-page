@@ -1,0 +1,46 @@
+---
+title: 'LaunchPro'
+tagline: 'A platform that launches digital ad campaigns on Tonic, Meta and TikTok with AI-generated content — from hours to minutes.'
+order: 1
+year: '2025 — 2026'
+role: 'Full-stack developer · AI'
+kind: 'cliente-privado'
+stack:
+  - 'Next.js 14'
+  - 'React 19'
+  - 'TypeScript'
+  - 'PostgreSQL + Prisma'
+  - 'Claude API'
+  - 'Vertex AI (Imagen 4 · Veo 3.1)'
+  - 'Docker'
+  - 'Google Cloud Run'
+highlights:
+  - { metric: '3', label: 'ad platforms integrated' }
+  - { metric: 'h → min', label: 'launch time' }
+  - { metric: '4', label: 'AI models orchestrated' }
+private: true
+cover: '../../../assets/projects/launchpro/cover.png'
+---
+
+## Context
+
+A media-buying team launched digital ad campaigns manually: writing copy, producing images and video, configuring the campaign on each platform and publishing it. Every launch took hours and the process didn't scale.
+
+## Problem
+
+Three different platforms (Tonic, Meta Ads and TikTok Ads), each with its own API, creative formats and validation rules. Plus a creative bottleneck: producing copy, keywords, articles, images and video for every campaign.
+
+## Solution
+
+I built a web application that orchestrates the whole flow: from brief to published campaign.
+
+- **Multimodal AI content generation**: Claude writes copy, keywords and articles; Vertex AI Imagen 4 produces the images and Veo 3.1 the creative video.
+- **Direct integration** with the Tonic, Meta and TikTok APIs to create and publish campaigns without leaving the app.
+- **Dedicated workers** for the heavy tasks (programmatic generation and video), decoupled from the main flow.
+- **Reproducible infrastructure**: PostgreSQL with Prisma, Docker containers and deployment on Google Cloud Run.
+
+## Results
+
+The launch workflow went from hours of manual work to minutes with human supervision. The team can launch more campaigns, with more creative variants, without growing headcount.
+
+> Built for a client under a confidentiality agreement: the code and campaign data are not public.

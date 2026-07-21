@@ -1,0 +1,211 @@
+---
+import type { Lang } from '@/i18n/ui';
+import {
+  contact,
+  summary,
+  experience,
+  education,
+  awards,
+  cvSkills,
+  languagesCv,
+} from '@/data/cv';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+
+const labels = {
+  es: {
+    summary: 'Perfil',
+    experience: 'Experiencia',
+    education: 'Educación',
+    skills: 'Habilidades',
+    awards: 'Logros',
+    languages: 'Idiomas',
+  },
+  en: {
+    summary: 'Profile',
+    experience: 'Experience',
+    education: 'Education',
+    skills: 'Skills',
+    awards: 'Achievements',
+    languages: 'Languages',
+  },
+}[lang];
+---
+
+<div class="cv-sheet">
+  <header class="cv-header">
+    <h1>{contact.name}</h1>
+    <p class="cv-headline">{contact.headline[lang]}</p>
+    <p class="cv-contact">
+      {contact.location[lang]} · <a href={`mailto:${contact.email}`}>{contact.email}</a> ·
+      {contact.phone} · <a href={contact.github}>github.com/gomezacero</a> ·
+      <a href={contact.linkedin}>LinkedIn</a>
+    </p>
+  </header>
+
+  <section>
+    <h2>{labels.summary}</h2>
+    <p>{summary[lang]}</p>
+  </section>
+
+  <section>
+    <h2>{labels.experience}</h2>
+    {
+      experience.map((item) => (
+        <div class="cv-item">
+          <div class="cv-item-head">
+            <h3>
+              {item.title[lang]} — <span>{item.org[lang]}</span>
+            </h3>
+            <p class="cv-period">{item.period[lang]}</p>
+          </div>
+          <ul>
+            {item.bullets[lang].map((b) => (
+              <li>{b}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </section>
+
+  <section>
+    <h2>{labels.skills}</h2>
+    <ul class="cv-skills">
+      {
+        Object.entries(cvSkills[lang]).map(([group, items]) => (
+          <li>
+            <strong>{group}:</strong> {items}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section>
+    <h2>{labels.education}</h2>
+    {
+      education.map((item) => (
+        <div class="cv-item">
+          <div class="cv-item-head">
+            <h3>
+              {item.title[lang]} — <span>{item.org[lang]}</span>
+            </h3>
+            <p class="cv-period">{item.period[lang]}</p>
+          </div>
+        </div>
+      ))
+    }
+  </section>
+
+  <section>
+    <h2>{labels.awards}</h2>
+    <ul>
+      {awards[lang].map((a) => <li>{a}</li>)}
+    </ul>
+  </section>
+
+  <section>
+    <h2>{labels.languages}</h2>
+    <p>{languagesCv[lang].join(' · ')}</p>
+  </section>
+</div>
+
+<style>
+  .cv-sheet {
+    max-width: 52rem;
+    margin: 0 auto;
+    background: #ffffff;
+    color: #1b1e23;
+    padding: 2.6rem 3rem;
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+  .cv-header h1 {
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+  .cv-headline {
+    color: #c25e33;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  .cv-contact {
+    margin-top: 0.4rem;
+    font-size: 0.78rem;
+    color: #5b6068;
+  }
+  .cv-contact a {
+    color: #c25e33;
+    text-decoration: none;
+  }
+  section {
+    margin-top: 1.15rem;
+  }
+  h2 {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #c25e33;
+    border-bottom: 1px solid #e2dcd2;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.55rem;
+  }
+  .cv-item + .cv-item {
+    margin-top: 0.7rem;
+  }
+  .cv-item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .cv-item h3 {
+    font-size: 0.9rem;
+    font-weight: 650;
+  }
+  .cv-item h3 span {
+    font-weight: 500;
+    color: #5b6068;
+  }
+  .cv-period {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: #5b6068;
+    white-space: nowrap;
+  }
+  ul {
+    margin-top: 0.3rem;
+    padding-left: 1.05rem;
+    list-style: disc;
+  }
+  li {
+    margin-top: 0.2rem;
+    color: #3a3f46;
+  }
+  li::marker {
+    color: #c25e33;
+  }
+  .cv-skills {
+    list-style: none;
+    padding-left: 0;
+  }
+  p {
+    color: #3a3f46;
+  }
+
+  @media print {
+    .cv-sheet {
+      padding: 0;
+      max-width: none;
+      font-size: 9.5pt;
+    }
+  }
+</style>

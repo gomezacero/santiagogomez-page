@@ -1,0 +1,47 @@
+---
+import { getLangFromUrl, useTranslations, localizePath } from '@/i18n/utils';
+import ThemeToggle from '@/components/ThemeToggle.astro';
+import LangSwitcher from '@/components/LangSwitcher.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const home = localizePath(lang, '/');
+
+const nav = [
+  { href: `${home}#proyectos`, label: t('nav.projects') },
+  { href: `${home}#skills`, label: t('nav.skills') },
+  { href: `${home}#trayectoria`, label: t('nav.path') },
+  { href: `${home}#contacto`, label: t('nav.contact') },
+  { href: localizePath(lang, '/cv'), label: t('nav.cv') },
+];
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-md"
+>
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
+    <a
+      href={home}
+      class="font-mono text-sm tracking-widest text-ink hover:text-accent transition-colors"
+      aria-label="Santiago Gómez Acero"
+    >
+      <span class="text-accent">~$</span> sgomez
+    </a>
+    <nav aria-label="principal" class="hidden items-center gap-6 md:flex">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class="text-sm text-muted transition-colors hover:text-ink"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="flex items-center gap-2">
+      <LangSwitcher />
+      <ThemeToggle />
+    </div>
+  </div>
+</header>

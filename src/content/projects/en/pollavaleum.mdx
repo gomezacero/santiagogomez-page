@@ -1,0 +1,40 @@
+---
+title: 'PollaValeum'
+tagline: 'A World Cup 2026 prediction league: 104 matches, a global leaderboard and a scoring system that recalculates itself.'
+order: 5
+year: '2025 — 2026'
+role: 'Design & development'
+kind: 'personal'
+stack:
+  - 'Next.js 16'
+  - 'TypeScript'
+  - 'Tailwind CSS 4'
+  - 'Supabase'
+  - 'Postgres RLS'
+  - 'SQL triggers'
+links:
+  repo: 'https://github.com/gomezacero/polla-valeum-mundial-2026'
+highlights:
+  - { metric: '104', label: 'predictable matches' }
+  - { metric: '0', label: 'manual recalculations' }
+  - { metric: 'RLS', label: 'anti-cheating at the DB level' }
+cover: '../../../assets/projects/pollavaleum/cover.png'
+---
+
+## Context
+
+The "polla" is a Latin American World Cup tradition: predict the scores and compete with friends. PollaValeum takes it global for the 2026 World Cup — anyone predicts all 104 matches and competes on a general leaderboard.
+
+## Problem
+
+Two things break a prediction league: someone copying other people's picks, and a corrected result forcing manual point recalculation. Both were solved in the database, not the frontend.
+
+## Solution
+
+- **Anti-copy with Row Level Security**: other players' predictions are invisible at the Postgres level until kickoff; the lock is validated against the server clock.
+- **Scoring via idempotent SQL triggers**: loading or correcting a score automatically recalculates every player's points. Zero manual maintenance during the tournament.
+- **A design with identity**: a fusion of sports-broadcast graphics (night blue + gold, scoreboards) and a retro sticker album — every prediction is a collectible card.
+
+## Results
+
+An app ready to run the whole tournament with a single administrator: load results and assign knockout brackets; everything else derives itself.

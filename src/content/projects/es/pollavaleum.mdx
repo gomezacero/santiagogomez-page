@@ -1,0 +1,40 @@
+---
+title: 'PollaValeum'
+tagline: 'La polla del Mundial 2026: 104 partidos, tabla global y un sistema de puntuación que se recalcula solo.'
+order: 5
+year: '2025 — 2026'
+role: 'Diseño y desarrollo'
+kind: 'personal'
+stack:
+  - 'Next.js 16'
+  - 'TypeScript'
+  - 'Tailwind CSS 4'
+  - 'Supabase'
+  - 'Postgres RLS'
+  - 'Triggers SQL'
+links:
+  repo: 'https://github.com/gomezacero/polla-valeum-mundial-2026'
+highlights:
+  - { metric: '104', label: 'partidos pronosticables' }
+  - { metric: '0', label: 'recálculos manuales' }
+  - { metric: 'RLS', label: 'anti-copia a nivel de BD' }
+cover: '../../../assets/projects/pollavaleum/cover.png'
+---
+
+## Contexto
+
+La "polla" del Mundial es una tradición: pronosticar los marcadores y competir con amigos. PollaValeum la lleva a escala global para el Mundial 2026 — cualquier persona pronostica los 104 partidos y compite en una tabla general.
+
+## Problema
+
+Dos cosas rompen una polla: que alguien copie los pronósticos ajenos y que corregir un resultado obligue a recalcular puntos a mano. Ambas se resolvieron en la base de datos, no en el frontend.
+
+## Solución
+
+- **Anti-copia con Row Level Security**: los pronósticos ajenos son invisibles a nivel de Postgres hasta el pitazo inicial; el bloqueo por kickoff se valida con el reloj del servidor.
+- **Puntuación por triggers SQL idempotentes**: cargar o corregir un marcador recalcula automáticamente los puntos de todos los jugadores. Cero mantenimiento manual durante el torneo.
+- **Diseño con identidad**: fusión de gráficos de transmisión deportiva (azul noche + dorado, scoreboards) y álbum de cromos retro — cada pronóstico es un cromo.
+
+## Resultados
+
+Una app lista para operar el torneo completo con un solo administrador: cargar resultados y asignar cruces de eliminatoria; todo lo demás se deriva solo.

@@ -1,0 +1,21 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+pnpm-debug.log*
+
+# environment
+.env
+.env.production
+
+# OS
+Thumbs.db
+.DS_Store
+
+# QA artifacts
+qa-screens/

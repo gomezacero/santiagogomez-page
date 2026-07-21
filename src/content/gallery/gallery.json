@@ -1,0 +1,108 @@
+[
+  {
+    "id": "designflow-ai-es",
+    "lang": "es",
+    "title": "DesignFlow AI",
+    "description": "Gestión de tareas Kanban con sprints, analítica en tiempo real y una capa de gamificación con créditos y leaderboards.",
+    "stack": ["React 19", "Bun", "Supabase Realtime", "TanStack Query"],
+    "repo": "https://github.com/gomezacero/designflow-ai"
+  },
+  {
+    "id": "designflow-ai-en",
+    "lang": "en",
+    "title": "DesignFlow AI",
+    "description": "Kanban task management with sprints, real-time analytics and a gamification layer with credits and leaderboards.",
+    "stack": ["React 19", "Bun", "Supabase Realtime", "TanStack Query"],
+    "repo": "https://github.com/gomezacero/designflow-ai"
+  },
+  {
+    "id": "controgastos-es",
+    "lang": "es",
+    "title": "ControGastos",
+    "description": "PWA de finanzas personales 100% offline: datos en IndexedDB, sin backend ni login, instalable en el teléfono.",
+    "stack": ["React 19", "Dexie", "PWA", "Recharts"]
+  },
+  {
+    "id": "controgastos-en",
+    "lang": "en",
+    "title": "ControGastos",
+    "description": "100% offline personal-finance PWA: data in IndexedDB, no backend, no login, installable on your phone.",
+    "stack": ["React 19", "Dexie", "PWA", "Recharts"]
+  },
+  {
+    "id": "fanpage-ai-manager-es",
+    "lang": "es",
+    "title": "Fanpage AI Manager",
+    "description": "Gestión de fanpages de Meta con IA: perfiles de marca, generación de ideas y media, y programación de publicaciones.",
+    "stack": ["Next.js 15", "Supabase", "Gemini", "next-intl"],
+    "repo": "https://github.com/gomezacero/META-AI-FANPAGE-SUPPORT"
+  },
+  {
+    "id": "fanpage-ai-manager-en",
+    "lang": "en",
+    "title": "Fanpage AI Manager",
+    "description": "Meta fanpage management with AI: brand profiles, idea and media generation, and post scheduling.",
+    "stack": ["Next.js 15", "Supabase", "Gemini", "next-intl"],
+    "repo": "https://github.com/gomezacero/META-AI-FANPAGE-SUPPORT"
+  },
+  {
+    "id": "eledencondominio-es",
+    "lang": "es",
+    "title": "El Edén Condominio",
+    "description": "Sitio comercial con captura de leads que contribuyó a vender 4 de 16 terrenos de un condominio campestre.",
+    "stack": ["Astro 5", "PHP", "MySQL", "SEO"],
+    "live": "https://eledencondominio.com"
+  },
+  {
+    "id": "eledencondominio-en",
+    "lang": "en",
+    "title": "El Edén Condominio",
+    "description": "Commercial lead-capture site that contributed to selling 4 of 16 lots in a country-side residential project.",
+    "stack": ["Astro 5", "PHP", "MySQL", "SEO"],
+    "live": "https://eledencondominio.com"
+  },
+  {
+    "id": "fundeset-es",
+    "lang": "es",
+    "title": "FUNDESET",
+    "description": "Sitio institucional con sistema de diseño propio y una landing narrativa donde ilustraciones a mano se transforman en fotografía real (GSAP).",
+    "stack": ["React 18", "Vite", "GSAP", "Design system"]
+  },
+  {
+    "id": "fundeset-en",
+    "lang": "en",
+    "title": "FUNDESET",
+    "description": "Institutional site with its own design system and a narrative landing where hand-drawn illustrations morph into real photography (GSAP).",
+    "stack": ["React 18", "Vite", "GSAP", "Design system"]
+  },
+  {
+    "id": "aprotevid-es",
+    "lang": "es",
+    "title": "APROTEVID",
+    "description": "Sitio institucional para asociación campesina en Colombia: 400+ usuarios activos en los primeros meses.",
+    "stack": ["HTML/CSS/JS", "Leaflet", "Hosting cloud"]
+  },
+  {
+    "id": "aprotevid-en",
+    "lang": "en",
+    "title": "APROTEVID",
+    "description": "Institutional site for a rural association in Colombia: 400+ active users in the first months.",
+    "stack": ["HTML/CSS/JS", "Leaflet", "Cloud hosting"]
+  },
+  {
+    "id": "blognataliainspo-es",
+    "lang": "es",
+    "title": "Agape by Nat",
+    "description": "Blog editorial de belleza con entradas, tutoriales e infografías — estático y ligero.",
+    "stack": ["HTML/CSS/JS"],
+    "repo": "https://github.com/gomezacero/blogNataliainspo"
+  },
+  {
+    "id": "blognataliainspo-en",
+    "lang": "en",
+    "title": "Agape by Nat",
+    "description": "Editorial beauty blog with posts, tutorials and infographics — static and lightweight.",
+    "stack": ["HTML/CSS/JS"],
+    "repo": "https://github.com/gomezacero/blogNataliainspo"
+  }
+]

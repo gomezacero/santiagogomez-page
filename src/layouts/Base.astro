@@ -1,0 +1,106 @@
+---
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { getLangFromUrl, useTranslations, alternatePath } from '@/i18n/utils';
+import { contact } from '@/data/cv';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  /** Oculta header/footer (página CV imprimible). */
+  bare?: boolean;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const {
+  title = t('meta.title'),
+  description = t('meta.description'),
+  ogImage,
+  bare = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const alt = alternatePath(Astro.url);
+const altUrl = new URL(alt.path, Astro.site);
+const ogImageUrl = new URL(
+  ogImage ?? `/og/${lang}${Astro.url.pathname === '/' || Astro.url.pathname === '/en/' || Astro.url.pathname === '/en' ? '/home' : Astro.url.pathname.replace(/^\/en/, '').replace(/\/$/, '')}.png`,
+  Astro.site,
+);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: contact.name,
+  jobTitle: lang === 'es' ? 'Desarrollador Full-Stack' : 'Full-Stack Developer',
+  email: `mailto:${contact.email}`,
+  url: Astro.site?.toString(),
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Bucaramanga',
+    addressCountry: 'CO',
+  },
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Universidad Autónoma de Bucaramanga (UNAB)',
+  },
+  knowsLanguage: ['es', 'en'],
+  sameAs: [contact.github, contact.linkedin],
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={lang} href={canonical} />
+    <link rel="alternate" hreflang={alt.lang} href={altUrl} />
+    <link rel="alternate" hreflang="x-default" href={new URL(lang === 'es' ? Astro.url.pathname : alt.path, Astro.site)} />
+    <link
+      rel="preload"
+      href="/fonts/ClashDisplay-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <meta name="sitemap" content="/sitemap-index.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content={lang === 'es' ? 'es_CO' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Anti-FOUC: aplica el tema guardado antes del primer paint -->
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem('theme');
+        const theme =
+          stored ?? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body class="min-h-dvh antialiased">
+    {!bare && <Header />}
+    <slot />
+    {!bare && <Footer />}
+  </body>
+</html>
