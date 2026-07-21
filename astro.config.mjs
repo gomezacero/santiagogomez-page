@@ -4,9 +4,8 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
-// Cambia `site` por el dominio definitivo cuando se decida el hosting.
 export default defineConfig({
-  site: 'https://santiagogomezacero.vercel.app',
+  site: 'https://santiagogomez.pages.dev',
   output: 'static',
   trailingSlash: 'ignore',
   i18n: {
