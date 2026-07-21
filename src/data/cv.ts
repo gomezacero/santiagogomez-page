@@ -31,16 +31,16 @@ export interface CvItem {
 export const experience: CvItem[] = [
   {
     title: { es: 'Desarrollador Full-Stack (freelance)', en: 'Full-Stack Developer (freelance)' },
-    org: { es: 'Cliente confidencial — LaunchPro & Lía', en: 'Confidential client — LaunchPro & Lía' },
+    org: { es: 'Cliente confidencial — LaunchPro & Lenguas', en: 'Confidential client — LaunchPro & Lenguas' },
     period: { es: '2025 — presente', en: '2025 — present' },
     bullets: {
       es: [
         'Desarrollé una plataforma que automatiza el lanzamiento de campañas en Tonic, Meta y TikTok Ads con generación de contenido por IA (Claude, Vertex AI Imagen y Veo), reduciendo el flujo de horas a minutos. Next.js, PostgreSQL/Prisma, Docker y Cloud Run.',
-        'Construí un coach conversacional de inglés con audio bidireccional en tiempo real (Gemini Live) y razonamiento con Claude; suscripciones con Stripe y analítica con PostHog.',
+        'Construí Lenguas (lenguas.co), un coach conversacional de inglés con audio bidireccional en tiempo real (Gemini Live) y razonamiento con Claude; suscripciones con Stripe y analítica con PostHog.',
       ],
       en: [
         'Built a platform that automates campaign launches on Tonic, Meta and TikTok Ads with AI-generated content (Claude, Vertex AI Imagen and Veo), cutting the workflow from hours to minutes. Next.js, PostgreSQL/Prisma, Docker and Cloud Run.',
-        'Built a conversational English coach with real-time bidirectional audio (Gemini Live) and Claude-powered reasoning; Stripe subscriptions and PostHog analytics.',
+        'Built Lenguas (lenguas.co), a conversational English coach with real-time bidirectional audio (Gemini Live) and Claude-powered reasoning; Stripe subscriptions and PostHog analytics.',
       ],
     },
   },

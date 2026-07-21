@@ -51,7 +51,7 @@ export const milestones: Milestone[] = [
   },
   {
     period: '2025 — 2026',
-    title: { es: 'LaunchPro & Lía — productos con IA', en: 'LaunchPro & Lía — AI products' },
+    title: { es: 'LaunchPro & Lenguas — productos con IA', en: 'LaunchPro & Lenguas — AI products' },
     body: {
       es: 'Plataformas para clientes: campañas de ads generadas con IA multimodal y un coach de inglés con conversación de voz en tiempo real.',
       en: 'Client platforms: ad campaigns generated with multimodal AI and an English coach with real-time voice conversation.',

@@ -10,7 +10,7 @@ const VIEWPORT = { width: 1600, height: 1000 };
 
 const LIVE = [
   { slug: 'hilong-lcr', url: 'https://thethreads.io' },
-  { slug: 'lenguas-lia', url: 'https://loquiaweb.vercel.app' },
+  { slug: 'lenguas-lia', url: 'https://lenguas.co' },
 ];
 
 const GENERATED = [
@@ -29,11 +29,11 @@ const GENERATED = [
     accent: '#8fbf6f',
   },
   {
-    slug: 'pollavaleum',
-    title: 'PollaValeum',
-    sub: 'World Cup 2026 · 104 matches',
-    pipeline: ['Next.js 16', 'Supabase · RLS', 'SQL triggers', 'leaderboard'],
-    accent: '#e0b84a',
+    slug: 'fanpage-ai-manager',
+    title: 'Fanpage AI Manager',
+    sub: 'AI-powered social publishing',
+    pipeline: ['brand profile', 'Gemini · ideas + media', 'scheduler', 'Facebook / IG / TikTok'],
+    accent: '#7aa7e0',
   },
 ];
 
@@ -82,8 +82,8 @@ for (const { slug, url } of LIVE) {
   const dir = path.join(OUT, slug);
   await mkdir(dir, { recursive: true });
   try {
-    await page.goto(url, { waitUntil: 'networkidle', timeout: 45000 });
-    await page.waitForTimeout(2500);
+    await page.goto(url, { waitUntil: 'load', timeout: 60000 });
+    await page.waitForTimeout(5000);
     await page.screenshot({ path: path.join(dir, 'cover.png') });
     console.log(`✓ ${slug} ← ${url}`);
   } catch (err) {

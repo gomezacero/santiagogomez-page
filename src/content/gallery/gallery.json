@@ -30,20 +30,20 @@
     "stack": ["React 19", "Dexie", "PWA", "Recharts"]
   },
   {
-    "id": "fanpage-ai-manager-es",
+    "id": "pollavaleum-es",
     "lang": "es",
-    "title": "Fanpage AI Manager",
-    "description": "Gestión de fanpages de Meta con IA: perfiles de marca, generación de ideas y media, y programación de publicaciones.",
-    "stack": ["Next.js 15", "Supabase", "Gemini", "next-intl"],
-    "repo": "https://github.com/gomezacero/META-AI-FANPAGE-SUPPORT"
+    "title": "PollaValeum",
+    "description": "La polla del Mundial 2026: 104 partidos, tabla global y puntuación por triggers SQL idempotentes con RLS anti-copia.",
+    "stack": ["Next.js 16", "Supabase", "RLS", "Triggers SQL"],
+    "repo": "https://github.com/gomezacero/polla-valeum-mundial-2026"
   },
   {
-    "id": "fanpage-ai-manager-en",
+    "id": "pollavaleum-en",
     "lang": "en",
-    "title": "Fanpage AI Manager",
-    "description": "Meta fanpage management with AI: brand profiles, idea and media generation, and post scheduling.",
-    "stack": ["Next.js 15", "Supabase", "Gemini", "next-intl"],
-    "repo": "https://github.com/gomezacero/META-AI-FANPAGE-SUPPORT"
+    "title": "PollaValeum",
+    "description": "A World Cup 2026 prediction league: 104 matches, a global leaderboard and scoring via idempotent SQL triggers with anti-copy RLS.",
+    "stack": ["Next.js 16", "Supabase", "RLS", "SQL triggers"],
+    "repo": "https://github.com/gomezacero/polla-valeum-mundial-2026"
   },
   {
     "id": "eledencondominio-es",
@@ -66,28 +66,32 @@
     "lang": "es",
     "title": "FUNDESET",
     "description": "Sitio institucional con sistema de diseño propio y una landing narrativa donde ilustraciones a mano se transforman en fotografía real (GSAP).",
-    "stack": ["React 18", "Vite", "GSAP", "Design system"]
+    "stack": ["React 18", "Vite", "GSAP", "Design system"],
+    "live": "https://fundeset.org"
   },
   {
     "id": "fundeset-en",
     "lang": "en",
     "title": "FUNDESET",
     "description": "Institutional site with its own design system and a narrative landing where hand-drawn illustrations morph into real photography (GSAP).",
-    "stack": ["React 18", "Vite", "GSAP", "Design system"]
+    "stack": ["React 18", "Vite", "GSAP", "Design system"],
+    "live": "https://fundeset.org"
   },
   {
     "id": "aprotevid-es",
     "lang": "es",
     "title": "APROTEVID",
     "description": "Sitio institucional para asociación campesina en Colombia: 400+ usuarios activos en los primeros meses.",
-    "stack": ["HTML/CSS/JS", "Leaflet", "Hosting cloud"]
+    "stack": ["HTML/CSS/JS", "Leaflet", "Hosting cloud"],
+    "live": "https://aprotevid.org"
   },
   {
     "id": "aprotevid-en",
     "lang": "en",
     "title": "APROTEVID",
     "description": "Institutional site for a rural association in Colombia: 400+ active users in the first months.",
-    "stack": ["HTML/CSS/JS", "Leaflet", "Cloud hosting"]
+    "stack": ["HTML/CSS/JS", "Leaflet", "Cloud hosting"],
+    "live": "https://aprotevid.org"
   },
   {
     "id": "blognataliainspo-es",
