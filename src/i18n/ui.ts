@@ -72,9 +72,9 @@ export const ui = {
     'about.index': '06',
     'about.title': 'Sobre mí',
     'about.p1':
-      'Soy Santiago, desarrollador full-stack de Bucaramanga, Colombia. En los últimos años pasé de construir sitios institucionales a diseñar y desplegar plataformas completas con IA: pipelines de generación de contenido multimodal, coaches conversacionales en tiempo real y sistemas de certificación en producción con CI/CD.',
+      'Soy Santiago, ingeniero de producto digital de Bucaramanga, Colombia. En los últimos años pasé de construir sitios institucionales a idear, diseñar y lanzar productos completos con IA: plataformas de generación de contenido multimodal, coaches conversacionales en tiempo real y sistemas de certificación que hoy usan empresas reales.',
     'about.p2':
-      'Termino Ingeniería de Sistemas en la UNAB en 2027 mientras construyo para clientes reales. Me obsesiona que las cosas lleguen a producción: con tests, con métricas y con usuarios de verdad. Si algo de lo que viste te sirve para tu equipo o tu proyecto, hablemos.',
+      'Termino Ingeniería de Sistemas en la UNAB en 2027 mientras construyo para clientes reales. No me conformo con que algo funcione: me obsesiona que genere resultados, con usuarios de verdad, métricas y calidad medible. Si tienes una idea que quieres volver realidad, hablemos.',
 
     'contact.index': '07',
     'contact.title': 'Contacto',
@@ -174,9 +174,9 @@ export const ui = {
     'about.index': '06',
     'about.title': 'About me',
     'about.p1':
-      "I'm Santiago, a full-stack developer from Bucaramanga, Colombia. Over the last few years I went from building institutional websites to designing and shipping full platforms with AI: multimodal content-generation pipelines, real-time conversational coaches and certification systems running in production with CI/CD.",
+      "I'm Santiago, a digital product engineer from Bucaramanga, Colombia. Over the last few years I went from building institutional websites to conceiving, designing and launching complete AI products: multimodal content-generation platforms, real-time conversational coaches and certification systems that real companies use today.",
     'about.p2':
-      "I finish my Systems Engineering degree at UNAB in 2027 while building for real clients. I'm obsessed with getting things to production: with tests, with metrics and with real users. If anything you saw here could help your team or your project, let's talk.",
+      "I finish my Systems Engineering degree at UNAB in 2027 while building for real clients. I'm not satisfied with something merely working: I'm obsessed with it delivering results — real users, metrics and measurable quality. If you have an idea you want to turn into reality, let's talk.",
 
     'contact.index': '07',
     'contact.title': 'Contact',
