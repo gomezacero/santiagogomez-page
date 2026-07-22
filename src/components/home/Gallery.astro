@@ -30,13 +30,13 @@ const cards = await getCollection('gallery', ({ data }) => data.lang === lang);
               ))}
             </ul>
             {(card.data.repo || card.data.live) && (
-              <div class="mt-4 flex gap-4 font-mono text-xs">
+              <div class="mt-2 flex gap-4 font-mono text-xs">
                 {card.data.live && (
                   <a
                     href={card.data.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="link-editorial text-muted"
+                    class="link-editorial inline-flex min-h-11 items-center text-muted"
                   >
                     live ↗
                   </a>
@@ -46,7 +46,7 @@ const cards = await getCollection('gallery', ({ data }) => data.lang === lang);
                     href={card.data.repo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="link-editorial text-muted"
+                    class="link-editorial inline-flex min-h-11 items-center text-muted"
                   >
                     github ↗
                   </a>

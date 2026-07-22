@@ -8,6 +8,9 @@ export default defineConfig({
   site: 'https://santiagogomez.pages.dev',
   output: 'static',
   trailingSlash: 'ignore',
+  build: {
+    inlineStylesheets: 'always',
+  },
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],

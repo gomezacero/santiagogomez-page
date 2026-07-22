@@ -17,14 +17,14 @@ const whatsappUrl = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent
 
     <div class="mt-12 grid gap-6 md:grid-cols-2">
       <!-- Reclutadores -->
-      <div class="reveal rounded-lg border border-line bg-surface p-7 md:p-9">
+      <div class="reveal rounded-lg border border-line bg-surface p-5 sm:p-7 md:p-9">
         <h3 class="font-display text-2xl font-medium text-ink">{t('contact.recruiter.title')}</h3>
         <p class="mt-2 text-muted">{t('contact.recruiter.body')}</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a
             href={`/cv/santiago-gomez-cv-${lang}.pdf`}
             download
-            class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
+            class="inline-flex min-h-11 items-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5 md:min-h-0"
           >
             {t('contact.recruiter.cv')}
           </a>
@@ -32,7 +32,7 @@ const whatsappUrl = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent
             href={contact.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            class="rounded-md border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+            class="inline-flex min-h-11 items-center rounded-md border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent md:min-h-0"
           >
             {t('contact.recruiter.linkedin')} ↗
           </a>
@@ -40,7 +40,7 @@ const whatsappUrl = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent
       </div>
 
       <!-- Freelance -->
-      <div class="reveal rounded-lg border border-line bg-surface p-7 md:p-9">
+      <div class="reveal rounded-lg border border-line bg-surface p-5 sm:p-7 md:p-9">
         <h3 class="font-display text-2xl font-medium text-ink">{t('contact.freelance.title')}</h3>
         <p class="mt-2 text-muted">{t('contact.freelance.body')}</p>
         <div class="mt-6 flex flex-wrap items-center gap-3">
@@ -48,7 +48,7 @@ const whatsappUrl = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="rounded-md bg-accent-2 px-5 py-2.5 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
+            class="inline-flex min-h-11 items-center rounded-md bg-accent-2 px-5 py-2.5 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5 md:min-h-0"
           >
             {t('contact.freelance.whatsapp')}
           </a>
@@ -57,16 +57,21 @@ const whatsappUrl = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent
             type="button"
             data-email={contact.email}
             data-copied={t('contact.freelance.emailCopied')}
-            class="rounded-md border border-line px-5 py-2.5 font-mono text-sm text-ink transition-colors hover:border-accent hover:text-accent"
+            class="inline-flex min-h-11 items-center rounded-md border border-line px-5 py-2.5 font-mono text-sm text-ink transition-colors hover:border-accent hover:text-accent md:min-h-0"
           >
             {t('contact.freelance.email')}
           </button>
         </div>
-        <p class="mt-4 font-mono text-xs text-muted">
-          <a href={`mailto:${contact.email}`} class="link-editorial">{contact.email}</a>
+        <p class="mt-2 font-mono text-xs text-muted">
+          <a href={`mailto:${contact.email}`} class="link-editorial inline-flex min-h-11 items-center"
+            >{contact.email}</a
+          >
           <span aria-hidden="true"> · </span>
-          <a href={contact.github} target="_blank" rel="noopener noreferrer" class="link-editorial"
-            >github.com/gomezacero</a
+          <a
+            href={contact.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-editorial inline-flex min-h-11 items-center">github.com/gomezacero</a
           >
         </p>
       </div>

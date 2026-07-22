@@ -13,13 +13,13 @@ const t = useTranslations(lang);
       {t('path.title')}
     </h2>
 
-    <ol class="relative mt-12 space-y-10 border-s border-line ps-8">
+    <ol class="relative mt-12 space-y-10 border-s border-line ps-6 sm:ps-8">
       {
         milestones.map((m) => (
           <li class="reveal relative">
             <span
               class:list={[
-                'absolute -start-[2.45rem] top-1 size-3 rounded-full border-2',
+                'absolute -start-[1.95rem] top-1 size-3 rounded-full border-2 sm:-start-[2.45rem]',
                 m.highlight ? 'border-accent bg-accent' : 'border-line bg-surface',
               ]}
               aria-hidden="true"

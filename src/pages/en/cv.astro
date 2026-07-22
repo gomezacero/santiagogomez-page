@@ -8,26 +8,30 @@ const t = useTranslations('en');
 
 <Base title="Resume — Santiago Gómez Acero" bare>
   <div class="no-print sticky top-0 z-10 border-b border-line bg-bg/90 backdrop-blur">
-    <div class="mx-auto flex max-w-4xl items-center justify-between px-5 py-3">
-      <a href="/en/" class="link-editorial font-mono text-sm text-muted">← santiagogomez</a>
-      <div class="flex gap-3">
+    <div class="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-2 px-5 py-3">
+      <a
+        href="/en/"
+        class="link-editorial inline-flex min-h-11 items-center font-mono text-sm text-muted md:min-h-0"
+        >← santiagogomez</a
+      >
+      <div class="flex flex-wrap gap-3">
         <a
           href="/cv/santiago-gomez-cv-en.pdf"
           download
-          class="rounded-md bg-accent px-4 py-2 text-sm font-medium text-bg"
+          class="inline-flex min-h-11 items-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-bg md:min-h-0"
         >
           {t('cv.download')}
         </a>
         <button
           onclick="print()"
-          class="rounded-md border border-line px-4 py-2 text-sm text-ink hover:border-accent"
+          class="inline-flex min-h-11 items-center rounded-md border border-line px-4 py-2 text-sm text-ink hover:border-accent md:min-h-0"
         >
           {t('cv.print')}
         </button>
       </div>
     </div>
   </div>
-  <main class="bg-[#e8e4dc] py-8 print:bg-white print:py-0">
+  <main class="bg-[#e8e4dc] py-0 sm:py-8 print:bg-white print:py-0">
     <CvSheet lang="en" />
   </main>
 </Base>

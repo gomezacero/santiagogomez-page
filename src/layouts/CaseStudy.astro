@@ -20,18 +20,18 @@ const backHref = `${localizePath(lang, '/')}#proyectos`;
   description={project.data.tagline}
 >
   <main class="mx-auto max-w-4xl px-5 py-14 md:py-20">
-    <a href={backHref} class="link-editorial font-mono text-sm text-muted">
+    <a href={backHref} class="link-editorial inline-flex min-h-11 items-center font-mono text-sm text-muted">
       ← {t('case.back')}
     </a>
 
     <header class="mt-8">
       <p class="section-index">{String(project.data.order).padStart(2, '0')} /</p>
-      <h1 class="mt-2 font-display text-4xl font-semibold tracking-tight text-ink md:text-6xl">
+      <h1 class="mt-2 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl md:text-6xl">
         {project.data.title}
       </h1>
       <p class="mt-4 max-w-2xl text-lg text-muted">{project.data.tagline}</p>
 
-      <dl class="mt-8 grid grid-cols-2 gap-6 border-y border-line py-6 font-mono text-sm md:grid-cols-4">
+      <dl class="mt-8 grid grid-cols-2 gap-4 border-y border-line py-6 font-mono text-sm sm:gap-6 md:grid-cols-4">
         <div>
           <dt class="text-xs uppercase tracking-widest text-muted">{t('case.year')}</dt>
           <dd class="mt-1 text-ink">{project.data.year}</dd>
@@ -121,7 +121,10 @@ const backHref = `${localizePath(lang, '/')}#proyectos`;
       next && (
         <nav class="mt-14 border-t border-line pt-8 text-right">
           <p class="font-mono text-xs uppercase tracking-widest text-muted">{t('case.next')}</p>
-          <a href={next.href} class="link-editorial mt-1 inline-block font-display text-2xl text-ink">
+          <a
+            href={next.href}
+            class="link-editorial mt-1 inline-flex min-h-11 items-center font-display text-2xl text-ink"
+          >
             {next.title} →
           </a>
         </nav>
@@ -192,5 +195,12 @@ const backHref = `${localizePath(lang, '/')}#proyectos`;
     border: 1px solid var(--c-line);
     border-radius: 0.3rem;
     padding: 0.1rem 0.35rem;
+  }
+  .case-prose pre {
+    overflow-x: auto;
+  }
+  .case-prose img {
+    max-width: 100%;
+    height: auto;
   }
 </style>

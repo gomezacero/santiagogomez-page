@@ -19,6 +19,8 @@ export const ui = {
     'nav.about': 'Sobre mí',
     'nav.contact': 'Contacto',
     'nav.cv': 'CV',
+    'nav.menu.open': 'Abrir menú',
+    'nav.menu.close': 'Cerrar menú',
 
     'hero.kicker': 'Santiago Gómez Acero — Ingeniero de producto digital · IA',
     'hero.title.1': 'Convierto ideas en',
@@ -119,6 +121,8 @@ export const ui = {
     'nav.about': 'About',
     'nav.contact': 'Contact',
     'nav.cv': 'Resume',
+    'nav.menu.open': 'Open menu',
+    'nav.menu.close': 'Close menu',
 
     'hero.kicker': 'Santiago Gómez Acero — Digital product engineer · AI',
     'hero.title.1': 'I turn ideas into',

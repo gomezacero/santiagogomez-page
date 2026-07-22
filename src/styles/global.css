@@ -54,6 +54,12 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a,
+button {
+  touch-action: manipulation;
 }
 
 body {
@@ -106,8 +112,10 @@ body {
   transform: none;
 }
 
+/* Solo en pantallas grandes: en móvil el contenido aparece al instante
+   (mejor LCP y sin estados semi-transparentes al auditar contraste). */
 @supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 48rem) {
     .reveal {
       animation: rise-in linear both;
       animation-timeline: view();
