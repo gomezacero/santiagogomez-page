@@ -12,6 +12,7 @@ const LIVE = [
   { slug: 'hilong-lcr', url: 'https://thethreads.io' },
   { slug: 'lenguas-lia', url: 'https://lenguas.co' },
   { slug: 'contabio', url: 'https://contabio.pro' },
+  { slug: 'cms-quicktipss', url: 'https://quicktipss.com' },
 ];
 
 const GENERATED = [
@@ -21,13 +22,6 @@ const GENERATED = [
     sub: 'AI campaign launcher',
     pipeline: ['brief', 'Claude · copy', 'Imagen 4 · visuals', 'Veo 3.1 · video', 'Tonic / Meta / TikTok'],
     accent: '#e0784a',
-  },
-  {
-    slug: 'cms-quicktipss',
-    title: 'QuickTipss CMS',
-    sub: 'API-first · multi-country publishing',
-    pipeline: ['Astro 5 · SSG', 'Hono · OpenAPI 3.1', 'Postgres · pgvector', 'workers · pgmq'],
-    accent: '#8fbf6f',
   },
   {
     slug: 'fanpage-ai-manager',

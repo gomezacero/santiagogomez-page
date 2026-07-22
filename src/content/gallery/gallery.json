@@ -5,7 +5,7 @@
     "title": "DesignFlow AI",
     "description": "Gestión de tareas Kanban con sprints, analítica en tiempo real y una capa de gamificación con créditos y leaderboards.",
     "stack": ["React 19", "Bun", "Supabase Realtime", "TanStack Query"],
-    "repo": "https://github.com/gomezacero/designflow-ai"
+    "live": "https://designflow-ai-lemon.vercel.app"
   },
   {
     "id": "designflow-ai-en",
@@ -13,23 +13,23 @@
     "title": "DesignFlow AI",
     "description": "Kanban task management with sprints, real-time analytics and a gamification layer with credits and leaderboards.",
     "stack": ["React 19", "Bun", "Supabase Realtime", "TanStack Query"],
-    "repo": "https://github.com/gomezacero/designflow-ai"
+    "live": "https://designflow-ai-lemon.vercel.app"
   },
   {
     "id": "pollavaleum-es",
     "lang": "es",
-    "title": "PollaValeum",
-    "description": "La polla del Mundial 2026: 104 partidos, tabla global y puntuación por triggers SQL idempotentes con RLS anti-copia.",
+    "title": "Predigol",
+    "description": "Pronósticos del Mundial 2026: 104 partidos, tabla global y puntuación por triggers SQL idempotentes con RLS anti-copia.",
     "stack": ["Next.js 16", "Supabase", "RLS", "Triggers SQL"],
-    "repo": "https://github.com/gomezacero/polla-valeum-mundial-2026"
+    "live": "https://polla-valeum.vercel.app"
   },
   {
     "id": "pollavaleum-en",
     "lang": "en",
-    "title": "PollaValeum",
+    "title": "Predigol",
     "description": "A World Cup 2026 prediction league: 104 matches, a global leaderboard and scoring via idempotent SQL triggers with anti-copy RLS.",
     "stack": ["Next.js 16", "Supabase", "RLS", "SQL triggers"],
-    "repo": "https://github.com/gomezacero/polla-valeum-mundial-2026"
+    "live": "https://polla-valeum.vercel.app"
   },
   {
     "id": "eledencondominio-es",
